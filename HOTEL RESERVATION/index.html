@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Palace Hotel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Grand Palace Hotel</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#facilities">Facilities</a>
+        <a href="booking.html" target="_blank">Book Now</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Welcome to Luxury & Comfort</h2>
+    <p>Enjoy a relaxing stay with world-class facilities.</p>
+    <a href="#rooms" class="btn">Explore Rooms</a>
+</section>
+
+<section class="search">
+    <h2>Find Your Stay</h2>
+    <form action="booking.html" method="get" target="_blank">
+        <label>Check-in:</label>
+        <input type="date" name="checkin" required>
+
+        <label>Check-out:</label>
+        <input type="date" name="checkout" required>
+
+        <label>Guests:</label>
+        <select name="guests">
+            <option>1</option>
+            <option selected>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+
+        <button type="submit">Search Rooms</button>
+    </form>
+</section>
+
+<section id="rooms" class="rooms">
+    <h2>Our Room Categories</h2>
+
+    <div class="room-container">
+
+        <div class="room-card">
+            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800"
+                 alt="Deluxe hotel room">
+            <h3>Deluxe Room</h3>
+            <p>Comfortable room with a beautiful interior.</p>
+            <p class="price">₹2,500 / night</p>
+            <p>Wi-Fi | AC | TV | Breakfast</p>
+            <a href="booking.html?room=Deluxe%20Room" target="_blank"
+               class="btn">Book Now</a>
+        </div>
+
+        <div class="room-card">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800"
+                 alt="Luxury suite">
+            <h3>Luxury Suite</h3>
+            <p>Spacious suite for a premium experience.</p>
+            <p class="price">₹4,500 / night</p>
+            <p>Wi-Fi | AC | TV | Mini Bar</p>
+            <a href="booking.html?room=Luxury%20Suite" target="_blank"
+               class="btn">Book Now</a>
+        </div>
+
+        <div class="room-card">
+            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800"
+                 alt="Family hotel room">
+            <h3>Family Room</h3>
+            <p>A relaxing room for families and friends.</p>
+            <p class="price">₹3,500 / night</p>
+            <p>Wi-Fi | AC | TV | Extra Beds</p>
+            <a href="booking.html?room=Family%20Room" target="_blank"
+               class="btn">Book Now</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="facilities" class="facilities">
+    <h2>Hotel Facilities</h2>
+    <div class="facility-container">
+        <div>📶 Free Wi-Fi</div>
+        <div>🏊 Swimming Pool</div>
+        <div>🍽️ Restaurant</div>
+        <div>🚗 Free Parking</div>
+        <div>❄️ Air Conditioning</div>
+        <div>🛎️ 24/7 Reception</div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Grand Palace Hotel | All Rights Reserved</p>
+    <p>Contact: info@grandpalace.example</p>
+</footer>
+
+</body>
+</html>

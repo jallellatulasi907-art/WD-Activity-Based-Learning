@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Room Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Grand Palace Hotel</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#rooms">Rooms</a>
+    </nav>
+</header>
+
+<div class="booking-box">
+    <h2>Room Reservation</h2>
+
+    <form id="bookingForm">
+        <label>Full Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Email Address:</label>
+        <input type="email" name="email" required>
+
+        <label>Phone Number:</label>
+        <input type="tel" name="phone" pattern="[0-9]{10}"
+               placeholder="10-digit mobile number" required>
+
+        <label>Select Room:</label>
+        <select name="room" id="room" required>
+            <option value="Deluxe Room">Deluxe Room - ₹2,500/night</option>
+            <option value="Family Room">Family Room - ₹3,500/night</option>
+            <option value="Luxury Suite">Luxury Suite - ₹4,500/night</option>
+        </select>
+
+        <label>Check-in Date:</label>
+        <input type="date" name="checkin" id="checkin" required>
+
+        <label>Check-out Date:</label>
+        <input type="date" name="checkout" id="checkout" required>
+
+        <label>Number of Guests:</label>
+        <select name="guests" id="guests">
+            <option>1</option>
+            <option selected>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+
+        <button type="submit">Confirm Reservation</button>
+    </form>
+
+    <p id="message" style="text-align:center; margin-top:15px;"></p>
+</div>
+
+<footer>
+    <p>© 2026 Grand Palace Hotel</p>
+</footer>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+if (params.has("room")) {
+    document.getElementById("room").value = params.get("room");
+}
+
+if (params.has("checkin")) {
+    document.getElementById("checkin").value = params.get("checkin");
+}
+
+if (params.has("checkout")) {
+    document.getElementById("checkout").value = params.get("checkout");
+}
+
+if (params.has("guests")) {
+    document.getElementById("guests").value = params.get("guests");
+}
+
+const today = new Date().toLocaleDateString("en-CA");
+
+document.getElementById("checkin").min = today;
+document.getElementById("checkout").min = today;
+
+document.getElementById("checkin").addEventListener("change", function () {
+    document.getElementById("checkout").min = this.value;
+});
+
+document.getElementById("bookingForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const checkin = document.getElementById("checkin").value;
+    const checkout = document.getElementById("checkout").value;
+
+    if (checkout <= checkin) {
+        document.getElementById("message").textContent =
+            "Check-out must be after check-in.";
+        return;
+    }
+
+    document.getElementById("message").textContent =
+        "Reservation details submitted successfully! (Demo only)";
+});
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Room Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Grand Palace Hotel</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#rooms">Rooms</a>
+    </nav>
+</header>
+
+<div class="booking-box">
+    <h2>Room Reservation</h2>
+
+    <form id="bookingForm">
+        <label>Full Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Email Address:</label>
+        <input type="email" name="email" required>
+
+        <label>Phone Number:</label>
+        <input type="tel" name="phone" pattern="[0-9]{10}"
+               placeholder="10-digit mobile number" required>
+
+        <label>Select Room:</label>
+        <select name="room" id="room" required>
+            <option value="Deluxe Room">Deluxe Room - ₹2,500/night</option>
+            <option value="Family Room">Family Room - ₹3,500/night</option>
+            <option value="Luxury Suite">Luxury Suite - ₹4,500/night</option>
+        </select>
+
+        <label>Check-in Date:</label>
+        <input type="date" name="checkin" id="checkin" required>
+
+        <label>Check-out Date:</label>
+        <input type="date" name="checkout" id="checkout" required>
+
+        <label>Number of Guests:</label>
+        <select name="guests" id="guests">
+            <option>1</option>
+            <option selected>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+
+        <button type="submit">Confirm Reservation</button>
+    </form>
+
+    <p id="message" style="text-align:center; margin-top:15px;"></p>
+</div>
+
+<footer>
+    <p>© 2026 Grand Palace Hotel</p>
+</footer>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+if (params.has("room")) {
+    document.getElementById("room").value = params.get("room");
+}
+
+if (params.has("checkin")) {
+    document.getElementById("checkin").value = params.get("checkin");
+}
+
+if (params.has("checkout")) {
+    document.getElementById("checkout").value = params.get("checkout");
+}
+
+if (params.has("guests")) {
+    document.getElementById("guests").value = params.get("guests");
+}
+
+const today = new Date().toLocaleDateString("en-CA");
+
+document.getElementById("checkin").min = today;
+document.getElementById("checkout").min = today;
+
+document.getElementById("checkin").addEventListener("change", function () {
+    document.getElementById("checkout").min = this.value;
+});
+
+document.getElementById("bookingForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const checkin = document.getElementById("checkin").value;
+    const checkout = document.getElementById("checkout").value;
+
+    if (checkout <= checkin) {
+        document.getElementById("message").textContent =
+            "Check-out must be after check-in.";
+        return;
+    }
+
+    document.getElementById("message").textContent =
+        "Reservation details submitted successfully! (Demo only)";
+});
+</script>
+
+</body>
+</html>
